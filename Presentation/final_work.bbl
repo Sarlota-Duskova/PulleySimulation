@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{climbing_school_2022}
+Climbing school. [Online], [cit.~2022-06-01].
+\newline\urlprefix\url{http://www.climbingschool.cz/?bcoid=294}
+
+\bibitem{Petzl_2022}
+Petzl How to calculate mechanical advantage. [Online], [cit.~2022-06-01].
+\newline\urlprefix\url{https://www.petzl.com/US/en/Professional/How-to-calculate-mechanical-advantage?ActivityName=Technical-rescue}
+
+\bibitem{rope_rescue_web_calculating_MA_T_system}
+Rope rescue training. [Online], [cit.~2022-06-01].
+\newline\urlprefix\url{https://roperescuetraining.com/physics_calcma_tsystem.php}
+
+\bibitem{stock_alpine_2022}
+Crevasse Rescue. [Online], [cit.~2022-06-01].
+\newline\urlprefix\url{https://www.stockalpine.com/posts/crevasse-rescue-haul-system}
+
+\end{thebibliography}

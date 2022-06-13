@@ -1,0 +1,138 @@
+%% -------------------------------------------------------- %%
+%% -------------------- Final work --------------------- %%
+%% --------------------------------------------------------- %%
+% Author:
+% Šarlota Dušková 
+
+%\ProvidesPackage{final_work}[2022/01/06 Common code for Final work style]
+
+%% --------------- Packages --------------- %%
+\usepackage[a4paper, inner=40mm, outer=25mm, top=30mm, bottom=20mm, marginparsep=0mm, headsep=10pt, headheight=25pt, footskip=25pt]{geometry} %showframe
+
+%% --------------- Coding --------------- %%
+\RequirePackage[utf8]{inputenc}     % vstupní znaková sada tohoto dokumentu: UTF-8
+\RequirePackage[czech, english]{babel} % Language for main language is set up czech and for second language is set up english
+
+%% --------------- Example of comments --------------- %%
+\RequirePackage{verbatim}
+%\begin{comment}
+%\end{comment}
+
+\RequirePackage[dvipsnames]{xcolor} %Colors line, it must be before pdfpages package 
+
+%% --------------- Graphics --------------- %%
+\RequirePackage{graphicx} % For inserting graphic files (PNG, etc.)
+\RequirePackage{caption} % For labels of figures, table etc. 
+\RequirePackage{subcaption} % For adding two figures side by side
+\RequirePackage{tabularx} % Extension for tabular preferences
+
+%% --------------- Others --------------- %%
+\RequirePackage[hidelinks]{hyperref} % In PDF will be url link ("hidelinks" want be frame it)
+\RequirePackage{pdfpages}
+%\RequirePackage[backend=biber,style=apa,citestyle=authoryear]{biblatex}
+
+%% --------------- Text settings --------------- %%
+\RequirePackage{color} % Colored text
+\RequirePackage{setspace} % For spacing
+\RequirePackage{anyfontsize}
+%\RequirePackage{titleps} % For page numbering on both side %Dont titlsec or use pagestyles
+\RequirePackage[explicit]{titlesec} % For chapter look
+\RequirePackage{indentfirst} % For making first paragraph
+\RequirePackage[titles]{tocloft} % For generating list of equations
+\RequirePackage{letltxmacro} % For generating list of equations
+\RequirePackage{enumitem} % For making list nicer %[topsep=0pt,itemindent=0cm]
+\RequirePackage[euler]{textgreek}
+\cftsetindents{figure}{0em}{3.5em}
+\cftsetindents{table}{0em}{3.5em}
+
+%% --------------- Fonts setting --------------- %%
+\parskip=6pt   % Space between paragraph
+\setstretch{1.5} % Space between lines
+\setlength{\parindent}{1.25cm} % Set a side paragraph 
+
+%% --------------- Section size --------------- %%
+\titleformat{\section}[hang]{\color{NavyBlue}\fontsize{16}{10}\selectfont}{\thesection}{0.8em}{#1}
+\titlespacing{\section}{0pt}{20pt}{0pt}
+
+\titleformat{\subsection}[hang]{\color{NavyBlue}\fontsize{16}{10}\selectfont}{\thesubsection}{0.8em}{#1}
+\titlespacing{\subsection}{0pt}{20pt}{0pt}
+
+\titleformat{\subsubsection}[hang]{\color{NavyBlue}\fontsize{16}{10}\selectfont}{\thesubsubsection}{0.8em}{#1}
+\titlespacing{\subsubsection}{0pt}{20pt}{0pt}
+
+%% --------------- Label setting--------------- %%
+\renewcommand{\labelitemi}{--} % Level 1
+\renewcommand{\labelitemii}{--} % Level 2
+\renewcommand{\labelitemiii}{--} % Level 3
+
+%% --------------- Header and footer --------------- %%
+\RequirePackage{fancyhdr} % For header and footer
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields 
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}} 
+\renewcommand{\headrulewidth}{0.5pt} % Set headrule width
+\renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}} % Set headrule color
+\renewcommand{\footrulewidth}{0.5pt} % Set footrule width
+\renewcommand{\footrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \footrulewidth\hfill}} % Set footrule color
+\fancyhead[LE]{\textit{\leftmark}} % For twoside
+%\fancyfoot[LE,RO]{\thepage} % For twoside
+\fancyhead[RO]{\textit{\nouppercase{\rightmark}}} % Set section name on right side at header
+\fancyfoot[LE,RO]{\thepage}  % Set page numbering on right and left side at footer
+
+% For change plain style in chapter page
+\fancypagestyle{plain}{%
+\fancyhf{} % Clear all header and footer fields 
+\fancyfoot[LE,RO]{\thepage} % Set page numbering on right and left side at footer
+ \renewcommand{\headrulewidth}{0pt} % Set headrule width
+ \renewcommand{\footrulewidth}{0.5pt} % Set footrule width
+ \renewcommand{\footrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \footrulewidth\hfill}}} % Set footrule color
+
+%% --------------- Two chapters on same page --------------- %%
+\RequirePackage{etoolbox}
+\makeatletter
+\patchcmd\chapter
+  {\if@openright\cleardoublepage\else\clearpage\fi}
+  {\par}% Inserting a \par here!
+  {}{}
+\makeatother
+
+%--------------------------------------------------------------------------------------------
+%KAPITOLA CELÁ PODTRŽENÁ
+%--------------------------------------------------------------------------------------------
+%\begin{comment}
+    \newcommand{\chaptertitlefont}{\color{NavyBlue}\fontsize{20}{10}\selectfont}
+    \titleformat{\chapter}[hang]
+    {\fontsize{40}{15}\selectfont\color{NavyBlue}}
+    {\thechapter}
+    {10.5pt} %Space between number and text
+    {\chaptertitlefont#1}[{\titlerule[0.8pt]}]
+    \titlespacing{\chapter}{0pt}{10pt}{10pt}
+    %\end{comment}
+
+%% --------------- Table of contents --------------- %%
+\renewcommand{\cfttoctitlefont}{\fontsize{16}{0}\selectfont\color{NavyBlue}}
+\setlength{\cftaftertoctitleskip}{10pt}
+
+%% --------------- Caption --------------- %%
+%\begin{comment}
+    \DeclareCaptionFont{10pt}{\fontsize{10pt}{8pt}\selectfont} % Footnote size
+    \captionsetup[figure]{singlelinecheck=false, font=10pt, labelfont={bf, it}, textfont={it}}
+    \captionsetup[subfigure]{singlelinecheck=false, font=10pt, labelfont={bf, it}, textfont={it}}
+%\end{comment}
+
+%% --------------- Bibliography--------------- %%
+\renewcommand{\bibname}{Seznam použité literatury}
+
+
+%% -------------- Definition of equation -------------- %%
+  \newcommand{\listequationsname}{Seznam rovnic}
+  \newlistof[equation]{myequations}{equ}{\listequationsname}
+  \setlength{\cftmyequationsindent}{1.5em} 
+  %\renewcommand{\cftmyequationtitlefont}{\fontsize{16}{10}\selectfont\color{NavyBlue}}
+  \LetLtxMacro{\LaTeXEquation}{\equation}%
+  \let\LaTeXEndEquation\endequation%
+  \renewenvironment{equation}[1][]{%
+  \LaTeXEquation%
+  \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}%
+  }%
+  {\LaTeXEndEquation}

@@ -1,0 +1,251 @@
+%% --------------- Packages --------------- %%
+\usepackage[a4paper, inner=40mm, outer=25mm, top=30mm, bottom=20mm, marginparsep=0mm, headsep=10pt, headheight=25pt, footskip=25pt]{geometry} %showframe
+
+%% --------------- Coding --------------- %%
+\usepackage[utf8]{inputenc}     % vstupní znaková sada tohoto dokumentu: UTF-8
+\usepackage[czech, english]{babel} % Language for main language is set up czech and for second language is set up english
+\usepackage[T1]{fontenc}    % Font coding, for punctuation, another option IL2
+
+%% --------------- Example of comments --------------- %%
+\usepackage{verbatim}
+%\begin{comment}
+%\end{comment}
+
+%% --------------- Blind text --------------- %%
+\usepackage{blindtext}
+\usepackage{lipsum}
+
+\usepackage[dvipsnames]{xcolor} %Colors line, it must be before pdfpages package 
+\usepackage{pdfpages} % For pdf scan
+\usepackage[hidelinks]{hyperref} % In PDF will be url link ("hidelinks" want be frame it)
+\usepackage{nameref} % Reference name
+\splithyphens % Correct hyphenation
+
+%% --------------- Graphics --------------- %%
+%\graphicspath{{../3_Fotky/Instalace/}}
+\usepackage{graphicx} % For inserting graphic files (PNG, etc.)
+%\usepackage{float} % Extension for more way to place picture
+%\usepackage{wrapfig} % For changing figures
+\usepackage{caption} % For labels of figures, table etc. 
+\usepackage{subcaption} % For adding two figures side by side
+\usepackage{tabularx} % Extension for tabular preferences
+%\usepackage{tabu} % Another tabular preferences
+
+%% --------------- Tables --------------- %%
+\usepackage{array}
+\usepackage{calc}
+
+%% --------------- Maths --------------- %%
+\usepackage{amsfonts}
+\usepackage{amsmath} % Package for advance mathematic
+\usepackage{amssymb} % Additional math symbols
+\usepackage{siunitx}
+
+%% --------------- Text settings --------------- %%
+\usepackage{color} % Colored text
+%\usepackage{soul} % For text highlighting
+\usepackage{setspace} % For spacing
+%\usepackage{sectsty} % For size of chapters
+\usepackage{anyfontsize}
+%\usepackage{titleps} % For page numbering on both side %Dont titlsec or use pagestyles
+\usepackage[explicit]{titlesec} % For chapter look
+\usepackage{indentfirst} % For making first paragraph
+\usepackage[titles]{tocloft} % For generating list of equations
+\usepackage{letltxmacro} % For generating list of equations
+%\usepackage{fancybox} % Fancy frames
+%\usepackage{enumitem} % For making list nicer
+%\usepackage{index} % For making list using package \makeindex
+%\newindex{default}{idx}{ind}{Rejstřík} % Implement index when it is used index package
+%\usepackage{tocbibind}
+
+%% --------------- Text typography --------------- %%
+\usepackage[none]{hyphenat} % Hyphenation turned off
+\sloppy % The words "do not crawl" over the right edge of the page
+\widowpenalty=1000 % "power of ban" (one line from begining of paragraph at the end of page)
+\clubpenalty=1000 % "power of ban" (one line/ word from end of paragraph be alone at the begining new page
+\brokenpenalty=1000 % "power of ban" (begin new page, after line which ending split word
+
+%% --------------- Fonts setting --------------- %%
+\parskip=6pt   % Space between paragraph
+\setstretch{1.5} % Space between lines
+\setlength{\parindent}{1.25cm} % Set a side paragraph   
+
+%% --------------- Section size --------------- %%
+\titleformat{\section}[hang]{\color{NavyBlue}\fontsize{16}{10}\selectfont}{\thesection}{1em}{#1}
+\titlespacing{\section}{0pt}{20pt}{0pt}
+
+\titleformat{\subsection}[hang]{\color{NavyBlue}\fontsize{16}{10}\selectfont}{\thesubsection}{1em}{#1}
+\titlespacing{\subsection}{0pt}{20pt}{0pt}
+
+\titleformat{\subsubsection}[hang]{\color{NavyBlue}\fontsize{16}{10}\selectfont}{\thesubsubsection}{1em}{#1}
+\titlespacing{\subsubsection}{0pt}{20pt}{0pt}
+
+%% --------------- Two chapters on same page --------------- %%
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\chapter
+  {\if@openright\cleardoublepage\else\clearpage\fi}
+  {\par}% Inserting a \par here!
+  {}{}
+\makeatother
+
+%% --------------- Dotline --------------- %%
+\usepackage[normalem]{ulem} %For dots
+\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
+\newcommand\dotline[2][.5em]{\leavevmode\hbox to #2{\dotfill{#1}\hfil}}
+
+%% --------------- Label setting--------------- %%
+\renewcommand{\labelitemi}{--} % Level 1
+\renewcommand{\labelitemii}{--} % Level 2
+\renewcommand{\labelitemiii}{--} % Level 3
+
+%% --------------- Header and footer --------------- %%
+\usepackage{fancyhdr} % For header and footer
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields 
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}} 
+\renewcommand{\headrulewidth}{0.5pt} % Set headrule width
+\renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}} % Set headrule color
+\renewcommand{\footrulewidth}{0.5pt} % Set footrule width
+\renewcommand{\footrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \footrulewidth\hfill}} % Set footrule color
+%\fancyhead[LE]{\textit{\leftmark}} % For twoside
+%\fancyfoot[LE,RO]{\thepage} % For twoside
+\fancyhead[RO]{\textit{\nouppercase{\rightmark}}} % Set section name on right side at header
+\fancyfoot[RO]{\thepage}  % Set page numbering on right side at footer
+
+% For change plain style in chapter page
+\fancypagestyle{plain}{%
+\fancyhf{} % Clear all header and footer fields 
+\fancyfoot[RO]{\thepage} % Set page numbering on right side at footer
+ \renewcommand{\headrulewidth}{0pt} % Set headrule width
+ \renewcommand{\footrulewidth}{0.5pt} % Set footrule width
+ \renewcommand{\footrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \footrulewidth\hfill}}} % Set footrule color
+
+%% --------------- Chart list --------------- %%
+\begin{comment}
+\usepackage{tocloft}
+\newcommand{\listgrafgraf}{Seznam grafů}
+\newlistof{graf}{grf}{\Large\listgrafgraf}
+\newcommand{\graf}[1]{\par\refstepcounter{graf}{\footnotesize\sffamily{{\textbf{Graf \thegraf:}} #1}} %captions
+\addcontentsline{grf}{graf}{\numberline{\thegraf} #1}\par}
+\usepackage{caption}
+\end{comment}
+
+%% -------------- Definition of equation -------------- %%
+\begin{comment}
+\newcommand{\listequationsname}{Seznam rovnic}
+\newlistof[equation]{myequations}{equ}{\listequationsname}
+\setlength{\cftmyequationsindent}{1.5em} 
+%\renewcommand{\cftmyequationtitlefont}{\fontsize{16}{10}\selectfont\color{NavyBlue}}
+\LetLtxMacro{\LaTeXEquation}{\equation}%
+\let\LaTeXEndEquation\endequation%
+\renewenvironment{equation}[1][]{%
+\LaTeXEquation%
+\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}%
+}%
+{\LaTeXEndEquation}
+\end{comment}
+
+%% --------------- Bibliography--------------- %%
+
+\renewcommand{\bibname}{Seznam použité literatury}
+
+
+%\usepackage[citestyle=numeric,bibstyle=authortitle]{biblatex} % For printing bibliography\usepackage[citestyle=numeric,style=iso-authoryear]{biblatex} % For printing bibliography
+%\usepackage{natbib}
+%\renewcommand{\bibsection}{\section*{\bibname}} 
+%\usepackage{biblatex} 
+%\defbibheading{bibliography}[\bibname]{\chapter*{#1}\chaptermark{#1}}
+
+%--------------------------------------------------------------------------------------------
+%KAPITOLA NAPSANÁ VLEVO V PRAVO JE VERTIKÁLNÍ ČÁRA A ČÍSLO
+%------------------------------------------------------------------------------------------
+\begin{comment}
+\newcommand\mychapformat[1]{\parbox[t]{\dimexpr\textwidth-3em\relax}{\raggedright #1}}
+\titleformat{\chapter}[display]%
+  {\color{NavyBlue}\fontsize{20}{10}\selectfont}%
+  {\vspace{-3px}\raggedleft{%
+    {\color{NavyBlue}%
+      \rule[-5pt]{1.5pt}{2.3cm}}\quad%
+    {\color{NavyBlue}
+      \fontsize{40}{10}\selectfont\thechapter}%
+    }%
+  }%
+  {-2.1em}%
+  {#1\mychapformat}%
+  \titlespacing{\chapter}{0pt}{0pt}{20pt}
+\end{comment}
+
+%--------------------------------------------------------------------------------------------
+%KAPITOLA VERTIKÁLNÍ ČÁRA A TEXT
+%--------------------------------------------------------------------------------------------
+%\begin{comment}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{color}
+\newcommand{\hsp}{\hspace{5pt}}
+\newcommand{\verline}{\rule{1pt}{2.0cm}} % Vertical line
+\newcommand{\chaptertitlefont}{\color{NavyBlue}\fontsize{20}{10}\selectfont}
+\titleformat{\chapter}[hang]{\color{NavyBlue}\fontsize{40}{10}\selectfont}{\thechapter\hsp\textcolor{NavyBlue}{\verline}\hsp}{0pt}{\chaptertitlefont#1} 
+%|
+\titlespacing{\chapter}{0pt}{0pt}{10pt}
+%\end{comment}
+
+%--------------------------------------------------------------------------------------------
+%KAPITOLA CELÁ PODTRŽENÁ ALE ODSAZENÁ 
+%--------------------------------------------------------------------------------------------
+\begin{comment}
+\usepackage[explicit]{titlesec}
+\newlength\chapnumb
+\setlength\chapnumb{2cm}
+\newcommand{\chaptertitlefont}{\color{NavyBlue}\fontsize{20}{10}\selectfont}
+\titleformat{\chapter}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+  \color{NavyBlue}\fontsize{40}{10}\selectfont\thechapter}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\chaptertitlefont#1}\\
+    \color{NavyBlue}\rule{\dimexpr\textwidth-\chapnumb\relax}{0.8pt}}}
+\titleformat{name=\chapter,numberless}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \mbox{}}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\chaptertitlefont#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+\titlespacing{\chapter}{0pt}{0pt}{10pt}
+\end{comment}
+
+%--------------------------------------------------------------------------------------------
+%KAPITOLA CELÁ PODTRŽENÁ
+%--------------------------------------------------------------------------------------------
+\begin{comment}
+\newcommand{\chaptertitlefont}{\color{NavyBlue}\fontsize{20}{10}\selectfont}
+\titleformat{\chapter}[hang]
+{\fontsize{40}{15}\selectfont\color{NavyBlue}}
+{\thechapter}
+{10pt}
+{\chaptertitlefont#1}[{\titlerule[0.8pt]}]
+\titlespacing{\chapter}{0pt}{10pt}{10pt}
+\end{comment}
+
+%% --------------- Font seting --------------- %%
+\usepackage{fontspec}
+\setmainfont[Path=/Library/Fonts/,
+ BoldFont={Technika-Regular.ttf}, 
+ ItalicFont={Technika-BookItalic.ttf},
+ BoldItalicFont={Technika-Italic}]{Technika-Book.ttf}
+
+%\usepackage{helvet}
+%\renewcommand\familydefault{\sfdefault}
+
+%% --------------- Caption --------------- %%
+%\begin{comment}
+\DeclareCaptionFont{10pt}{\fontsize{10pt}{8pt}\selectfont} % Footnote size
+\captionsetup[figure]{singlelinecheck=false, font=10pt, labelfont={bf, it}, textfont={it}}
+\captionsetup[subfigure]{singlelinecheck=false, font=10pt, labelfont={bf, it}, textfont={it}}
+%\end{comment}
+
+% \usepackage{textgreek}

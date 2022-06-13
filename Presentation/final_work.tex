@@ -1,0 +1,103 @@
+\documentclass[a4paper,twoside,12pt]{book} % Openany for starting chapter on any pages
+
+\usepackage{structure} % Code defining the structure and style of the document
+\input{introduction.tex} % Introduction
+\addto\captionsenglish{\renewcommand*\contentsname{Obsah}}
+\addto{\captionsenglish}{\renewcommand{\bibname}{Seznam použité literatury}}
+\usepackage{cite}
+\begin{document}
+%% -------------------------------------------------- %%
+%% -------------------- Title page ------------------- %%
+%% -------------------------------------------------- %%
+\thispagestyle{empty}
+\begin{titlepage}
+\begin{center}
+{\textbf{\large{\MakeUppercase{\uimla}}}}\\
+{\color{NavyBlue}\rule{\linewidth}{0.5mm}}
+\vspace{1cm} \\
+\logo\\
+\smallskip
+{\textbf{\large{\MakeUppercase{\finalwork}}}}\\
+\bigskip
+{\MakeUppercase{\titleCZ}}\\
+\vspace{8.0cm}
+\begin{tabular}{llrl}
+Program: & \program\\
+\end{tabular}
+\vspace{2cm} \\
+\authorfinalwork \\
+{\color{NavyBlue}\rule{\linewidth}{0.5mm}}
+\place \space \yearoffinalwork
+\end{center}
+\end{titlepage}
+%% -------------------------------------------------- %%
+%% -------------------- Content -------------------- %%
+%% -------------------------------------------------- %%
+\tableofcontents
+\thispagestyle{empty} % Removes numbers from last page.
+%% -------------------------------------------------- %%
+%% -------------------- Chapters --------------------- %%
+%% -------------------------------------------------- %%
+\include{Chapters/chapter_introduction}
+\include{Chapters/chapter_materials}
+\include{Chapters/chapter_pulley_system}
+\include{Chapters/chapter_pulley_system_2}
+\include{Chapters/chapter_web_application}
+\include{Chapters/chapter_effort_calculation}
+\include{Chapters/chapter_conclusion}
+
+\begin{comment}
+%% -------------------------------------------------- %%
+%% ----------------- List of figures ------------------ %%
+%% -------------------------------------------------- %%
+\newpage
+\addcontentsline{toc}{chapter}{Seznam obrázků}
+\renewcommand{\listfigurename}{Seznam obrázků}
+\renewcommand{\cftloftitlefont}{\fontsize{16}{10}\selectfont\color{NavyBlue}}
+\setlength{\cftafterloftitleskip}{10pt}
+\clearpage % Otherwise \pagestyle affects the previous page.
+{% Enclosed in braces so that re-definition is temporary.
+  \pagestyle{empty} % Removes numbers from middle pages.
+  \fancypagestyle{plain} % Re-definition removes numbers from first page.
+  {%
+    \fancyhf{} % Clear all header and footer fields.
+    \renewcommand{\headrulewidth}{0pt} % Clear rules (remove these two lines if not desired).
+    \renewcommand{\footrulewidth}{0pt}%
+  }
+ 	{%
+	\let\oldnumberline\numberline%
+	\renewcommand{\numberline}{Obr.~\oldnumberline}%
+	\listoffigures%
+	}
+  \thispagestyle{empty} % Removes numbers from last page.
+}
+\end{comment}
+%% -------------------------------------------------- %%
+%% ---------------- List of equations ---------------- %%
+%% -------------------------------------------------- %%
+\newpage
+\addcontentsline{toc}{chapter}{Seznam rovnic}
+\listofmyequations
+\thispagestyle{empty}
+%% -------------------------------------------------- %%
+%% ------------------ Bibliography ------------------- %%
+%% -------------------------------------------------- %%
+\newpage
+\addcontentsline{toc}{chapter}{Seznam použité literatury}
+\clearpage % Otherwise \pagestyle affects the previous page.
+{% Enclosed in braces so that re-definition is temporary.
+  \pagestyle{empty} % Removes numbers from middle pages.
+  \fancypagestyle{plain} % Re-definition removes numbers from first page.
+  {%
+    \fancyhf{} % Clear all header and footer fields.
+    \renewcommand{\headrulewidth}{0pt} % Clear rules (remove these two lines if not desired).
+    \renewcommand{\footrulewidth}{0pt}%
+  }
+  \bibliographystyle{BibDesk/czechiso.bst} % Plain is another style
+ % \begin{flushleft}
+ \Urlmuskip=0mu plus 1mu\relax
+  \bibliography{BibDesk/Bibliography}
+  %\end{flushleft}
+  \thispagestyle{empty} % Removes numbers from last page.
+}
+\end{document}
