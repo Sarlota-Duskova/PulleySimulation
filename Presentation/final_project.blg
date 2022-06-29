@@ -7,13 +7,14 @@ A level-1 auxiliary file: Chapters/chapter_pulley_system.aux
 A level-1 auxiliary file: Chapters/chapter_pulley_system_2.aux
 A level-1 auxiliary file: Chapters/chapter_web_application.aux
 A level-1 auxiliary file: Chapters/chapter_effort_calculation.aux
+A level-1 auxiliary file: Chapters/chapter_summary.aux
 A level-1 auxiliary file: Chapters/chapter_conclusion.aux
 The style file: BibDesk/czechiso.bst.bst
 Database file #1: BibDesk/Bibliography.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 4 entries,
             3151 wiz_defined-function locations,
-            675 strings with 6135 characters,
+            676 strings with 6163 characters,
 and the built_in function-call counts, 994 in all, are:
 = -- 68
 > -- 4
