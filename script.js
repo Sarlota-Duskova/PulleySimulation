@@ -271,7 +271,6 @@ function checkboxChanged() {
   }
 }
 
-
 /*--------------------------------------*/
 /*------Slider and buttons action-------*/
 /*--------------------------------------*/
@@ -285,24 +284,26 @@ function updateTextInput(val) {
 function calculatingEfficiency() {
 
   // Pulley system 3:1
-  if((friction1.value == "" && friction2.value == "") && (checkBox1.checked == true && checkBox2.checked == false && checkBox3.checked == false)) {
-    outputSpan1.textContent = Math.round(rangeSlider.value/ 3);
+  if(checkBox1.checked == true && checkBox2.checked == false && checkBox3.checked == false) {
+    if (friction1.value == "" && friction2.value == "") {
+      outputSpan1.textContent = Math.round(rangeSlider.value/ 3);
+    } else {
+      calculatingFriction();
+    }
+  } else if (checkBox1.checked == false && checkBox2.checked == true && checkBox3.checked == false) {
+    if (friction1.value == "" && friction2.value == "" && friction3.value == "" && friction4.value == "") {
+      outputSpan2.textContent = Math.round(rangeSlider.value/ 5);
+    } else {
+      calculatingFriction();
+    }
+  } else if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == true) {
+    if (friction1.value == "" && friction2.value == "" && friction3.value == "") {
+      outputSpan3.textContent = Math.round(rangeSlider.value/ 7);
+    } else {
+      calculatingFriction();
+    }
   } else {
-    calculatingFriction();
-  }
-  
-  // Pulley system 5:1
-  if((friction1.value == "" && friction2.value == "" && friction3.value == "" && friction4.value == "") && (checkBox1.checked == false && checkBox2.checked == true && checkBox3.checked == false)) {
-    outputSpan1.textContent = Math.round(rangeSlider.value/ 3);
-  } else {
-    calculatingFriction();
-  }
-  
-  // Pulley system 7:1
-  if((friction1.value == "" && friction2.value == "" && friction3.value == "") && (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == true)) {
-    outputSpan1.textContent = Math.round(rangeSlider.value/ 3);
-  } else {
-    calculatingFriction();
+    // do nohing
   }
 }
 
@@ -337,7 +338,7 @@ function calculatingFriction(){
     f4;
   }
   
-  if (checkBox1.checked == true) {
+  if (checkBox1.checked == true && checkBox2.checked == false && checkBox3.checked == false) {
     if(requiredPullOutLength.value == "") {
       outputSpan1.textContent = Math.round(rangeSlider.value/ (1+f1+(f1*f2)).toFixed(2));
     } else {
@@ -345,7 +346,7 @@ function calculatingFriction(){
       outputSpanDist.textContent = requiredPullOutLength.value*(1+f1+(f1*f2)).toFixed(2);
     }
 
-  } else if (checkBox2.checked == true) {
+  } else if (checkBox1.checked == false && checkBox2.checked == true && checkBox3.checked == false) {
     if(requiredPullOutLength.value == "") {
       outputSpan2.textContent = Math.round(rangeSlider.value/ (4+f1-f4+(f2*f3)*(f4-1-f1+f1*f4)).toFixed(2));
     } else {
@@ -353,7 +354,7 @@ function calculatingFriction(){
       outputSpanDist.textContent = requiredPullOutLength.value*(4+f1-f4+(f2*f3)*(f4-1-f1+f1*f4)).toFixed(2);
     }
     
-  } else if (checkBox3.checked == true) {
+  } else if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == true) {
     if(requiredPullOutLength.value == ""){
       outputSpan3.textContent = Math.round(rangeSlider.value/ (4-f2-Math.pow(f3, 2)+3*f1-f1*Math.pow(f3, 2)-f2*f1).toFixed(2));
     } else {
