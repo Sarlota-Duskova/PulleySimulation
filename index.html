@@ -23,61 +23,61 @@
         <div class="columnTextArea">
           <p>1. Choose pulley system:</p>
           <p>
-            <input class="inputCheckbox" name="check" type="checkbox" onclick="onlyOne(this);checkboxChanged();" id="checkb-3">
+            <input class="inputCheckbox" name="check" type="checkbox" onclick="pulleySetupChanged(this);" id="checkb-3">
             <label for="3-1" id="label-check"> 3:1</label>
           </p>
           <p>
-            <input class="inputCheckbox" name="check" type="checkbox" onclick="onlyOne(this);checkboxChanged();" id="checkb-5">
+            <input class="inputCheckbox" name="check" type="checkbox" onclick="pulleySetupChanged(this);" id="checkb-5">
             <label for="5-1" id="label-check"> 5:1</label>
           </p>
           <p>
-            <input class="inputCheckbox" name="check" type="checkbox" onclick="onlyOne(this);checkboxChanged();" id="checkb-7">
+            <input class="inputCheckbox" name="check" type="checkbox" onclick="pulleySetupChanged(this);" id="checkb-7">
             <label for="7-1" id="label-check">7:1</label>
           </p>
         </div>
-        <div class="columnTextArea2" style="visibility:hidden">
+        <div class="columnTextArea2">
           <p class="frictionShowAll" id="pulleyLabel">2. Pulley efficiency:</p>
           <p class="frictionShowAll">
             <label for="name">Pulley 1: </label>
-            <input type="number" min="0" max="100" placeholder="100" id="frictionName1" name="name" onchange="changeHandler(this);calculatingFriction();" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            <input type="number" min="0" max="100" placeholder="100" id="frictionName1" name="name" onchange="changeHandler(this)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
     type = "number"
     maxlength = "3" required> % <!-- placeholder = text of an input field -->
           </p>
           <p class="frictionShowAll">
             <label for="name">Pulley 2: </label>
-            <input type="number" min="0" max="100" placeholder="100" id="frictionName2" name="name" onchange="changeHandler(this);calculatingFriction();" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            <input type="number" min="0" max="100" placeholder="100" id="frictionName2" name="name" onchange="changeHandler(this)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
     type = "number"
     maxlength = "3" required> % <!-- placeholder = text of an input field -->
           </p>
           <p class="frictionShow57">
             <label for="name">Pulley 3: </label>
-            <input type="number" min="0" max="100" placeholder="100" id="frictionName3" name="name" onchange="changeHandler(this);calculatingFriction();" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            <input type="number" min="0" max="100" placeholder="100" id="frictionName3" name="name" onchange="changeHandler(this)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
     type = "number"
     maxlength = "3" required> % <!-- placeholder = text of an input field -->
           </p>
           <p class="frictionShow5_1">
             <label for="name">Pulley 4: </label>
-            <input type="number" min="0" max="100" placeholder="100" id="frictionName4" name="name" onchange="changeHandler(this);calculatingFriction();" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            <input type="number" min="0" max="100" placeholder="100" id="frictionName4" name="name" onchange="changeHandler(this)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
     type = "number"
     maxlength = "3" required> % <!-- placeholder = text of an input field -->
           </p>
         </div>
       </div>
       <!-- Slide container section -->
-      <div class="slideContainer" id="slideContainer" style="visibility:hidden">
-        <p>Weight of rescue climber:</p> 
+      <div class="slideContainer" id="slideContainer">
+        <p>Weight of rescue climber:</p>
         <input type="button" id="buttonMinus" value="-">
-        <input type="range" min="40" max="130" step="1" value="40" class="slider" id="weightSlider" onchange="updateTextInput(this.value)">
+        <input type="range" min="40" max="130" step="1" value="40" class="slider" id="weightSlider">
         <input type="button" id="buttonPlus" value="+">
         <table class="sliderCaption">
           <tr><td>40 kg</td><td>130 kg</td></tr>
         </table>
       </div>
       <!-- Pulling distance section -->
-      <div class="pullingDistance" id="pullingDistance" style="visibility:hidden">
+      <div class="pullingDistance" id="pullingDistance">
         <p>
           <label for="name" id="nameLabel">Required pulling distance: </label>
-          <input type="number" max="60" min="0" placeholder="0" id="pullOutDist" name="name" onchange="changeHandlerDistance(this);pullDistance();" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          <input type="number" max="60" min="0" placeholder="0" value="10" id="pullOutDist" name="name" onchange="changeHandlerDistance(this)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
     type = "number"
     maxlength = "2" required/> m => the length of rope you have to pull <span type="text" id="textOutputPullingDistance" value="">0</span> m
         </p>
@@ -2367,6 +2367,6 @@
 <!-- partial -->
   <script  src="./script.js"></script>
   <script  src="./vivus.js"></script>
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/vivus/0.4.6/vivus.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js"></script>
 </body>
 </html>

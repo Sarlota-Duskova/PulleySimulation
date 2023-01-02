@@ -15,7 +15,7 @@
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">
-  
+
   <script type="text/javascript" src="http://cdn.jsdelivr.net/vivus/0.2.1/vivus.min.js"></script>
 </head>
 
@@ -29,20 +29,20 @@
       <div class="textArea">
         Choose pulley system:
         <p>
-          <input class="inputCheckbox" name="check" type="checkbox" onclick="onlyOne(this);checkboxChanged();" id="checkb-3">
+          <input class="inputCheckbox" name="check" type="checkbox" onclick="pulleySetupChanged(this);checkboxChanged();" id="checkb-3">
           <label for="3-1" id="label-check"> 3:1</label>
         </p>
         <p>
-          <input class="inputCheckbox" name="check" type="checkbox" onclick="onlyOne(this);checkboxChanged();" id="checkb-5">
+          <input class="inputCheckbox" name="check" type="checkbox" onclick="pulleySetupChanged(this);checkboxChanged();" id="checkb-5">
           <label for="5-1" id="label-check"> 5:1</label>
         </p>
         <p>
-          <input class="inputCheckbox" name="check" type="checkbox" onclick="onlyOne(this);checkboxChanged();" id="checkb-7">
+          <input class="inputCheckbox" name="check" type="checkbox" onclick="pulleySetupChanged(this);checkboxChanged();" id="checkb-7">
           <label for="7-1" id="label-check">7:1</label>
         </p>
       </div>
       <!-- Slide container section -->
-      Weight of rescue climber: 
+      Weight of rescue climber:
       <div class="slideContainer" id="slideContainer">
         <input type="button" id="buttonMinus" value="-">
         <input type="range" min="40" max="130" step="1" value="40" class="slider" id="weightSlider" onchange="updateTextInput(this.value)">
@@ -70,7 +70,7 @@
             </div>
             <div><span type="text" id="firstPulley3_1" value="">1</span></div>
             <div><span type="text" id="secondPulley3_1" value="">2</span></div>
-            <div><span type="text" id="thirdPulley3_1" value="">3</span></div> 
+            <div><span type="text" id="thirdPulley3_1" value="">3</span></div>
           </div>
           <svg id="svg1" style="visibility:hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 205.70156 437.06834" class="" style="">
             <defs>
@@ -1457,7 +1457,7 @@
             <div><span type="text" id="secondPulley7_1" value="">2</span></div>
             <div><span type="text" id="thirdPulley7_1" value="">3</span></div>
             <div><span type="text" id="fourthPulley7_1" value="">4</span></div>
-            <div><span type="text" id="fifthPulley7_1" value="">5</span></div> 
+            <div><span type="text" id="fifthPulley7_1" value="">5</span></div>
           </div>
           <svg id="svg3" style="visibility:hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 260.33792 466.72949" class="" style="">
             <defs>
@@ -2702,7 +2702,7 @@ var step = parseInt(rangeSlider.step);
 /*--------------------------------------*/
 /*-----Only one checkbox is checked-----*/
 /*--------------------------------------*/
-function onlyOne(checkbox) {
+function pulleySetupChanged(checkbox) {
   checkboxes.forEach((item) => {
     if (item !== checkbox) item.checked = false
   })
@@ -2830,7 +2830,7 @@ function sliderFnc(){
   output1.value = rangeSlider.value;
   output2.value = rangeSlider.value;
   output3.value = rangeSlider.value;
-    
+
   calculatingEfficiency()
   return console.log("hey Am i Working?")
 }
@@ -2848,7 +2848,7 @@ function btnsFnc(evt){
     output1.value = rangeSlider.value;
     output2.value = rangeSlider.value;
     output3.value = rangeSlider.value;
-    
+
     calculatingEfficiency()
   }
   else if (target.id == 'buttonPlus') {
@@ -2859,14 +2859,14 @@ function btnsFnc(evt){
     output1.value = rangeSlider.value;
     output2.value = rangeSlider.value;
     output3.value = rangeSlider.value;
-    
+
     calculatingEfficiency()
   } else {
     console.log("do nothing")
     sliderFnc();
   }
 };
-                              
+
 document.addEventListener('DOMContentLoaded', function() {
   updateTextInput();
 });
