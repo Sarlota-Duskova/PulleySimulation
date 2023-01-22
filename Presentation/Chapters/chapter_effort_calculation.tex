@@ -44,76 +44,23 @@ Pokud uživatel zadá konkrétní účinnost kladky, uvažuji pro \textbf{systé
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:calculation_3_1}
-    F = \frac{m}{1 + \frac{f_1}{100} + (\frac{f_1}{100} \cdot \frac{f_2}{100})}
+    F = \frac{m}{1 + \frac{f_2}{100} \cdot (1 + \frac{f_1}{100})}
 \end{equation}
+
 \subsection{Kladkostroj 5:1}
+Uvažuji rozložení sil (viz~\autoref{Obr:pulley_system_5_1}). Od pramene, kterým se vytahuje zachraňovaný se jednotlivé části lana mezi kladkami rozdělí na ${F_1}$ - ${F_5}$. Kladky označuji ${f_1}$ - ${f_4}$ a začínají s číslováním od zachraňovaného.
 %% -------------------------------------------------- %%
-%% -------------------- Equation --------------------- %%
+%% -------------------- Picture --------------------- %%
 %% -------------------------------------------------- %%
-Uvažuji rozložení sil (viz~\autoref{Obr:5:1_forces_distribution}). Od pramene, kterým se vytahuje zachraňovaný se jednotlivé části lana mezi kladkami rozdělí na ${F_1}$ - ${F_8}$. Kladky označuji ${f_1}$ - ${f_4}$ a začínají s číslováním od zachraňovaného. Pro \textbf{systém 5:1} uvažuji následující vzorce:
+\begin{figure}[!hbt]
+    \centering
+    \includegraphics[width=10.0cm]{Figures/5_1/3_haul_syste_5_1_changed.png}
+    \caption[Schéma kladkostroje 5:1]{Schéma kladkostroje 5:1 (schéma převzato ze zdroje \cite{Petzl_2022})}
+    \label{Obr:pulley_system_5_1}
+\end{figure} 
+%% -------------------------------------------------- %%
 
-%% -------------------------------------------------- %%
-%% -------------------- Equation --------------------- %%
-%% -------------------------------------------------- %%
-\begin{equation}
-    \label{eqn:1_calculation_5_1}
-    F_2 = 1 - \frac{f_4}{100}
-\end{equation}
-%% -------------------------------------------------- %%
-%% -------------------- Equation --------------------- %%
-%% -------------------------------------------------- %%
-\begin{equation}
-    \label{eqn:2_calculation_5_1}
-    F_3 = 2 - \frac{f_4}{100}
-\end{equation}
-%% -------------------------------------------------- %%
-%% -------------------- Equation --------------------- %%
-%% -------------------------------------------------- %%
-\begin{equation}
-    \label{eqn:3_calculation_5_1}
-    F_4 = \frac{f_2}{100} \cdot \frac{f_3}{100}
-\end{equation}
-%% -------------------------------------------------- %%
-%% -------------------- Equation --------------------- %%
-%% -------------------------------------------------- %%
-\begin{equation}
-    \label{eqn:4_calculation_5_1}
-    F_5 = 1 - (\frac{f_4}{100} \cdot \frac{f_2}{100})
-\end{equation}
-%% -------------------------------------------------- %%
-%% -------------------- Equation --------------------- %%
-%% -------------------------------------------------- %%
-\begin{equation}
-    \label{eqn:5_calculation_5_1}
-    F_6 = 2 - (\frac{f_4}{100} \cdot \frac{f_2}{100})
-\end{equation}
-%% -------------------------------------------------- %%
-%% -------------------- Equation --------------------- %%
-%% -------------------------------------------------- %%
-\begin{equation}
-    \label{eqn:6_calculation_5_1}
-    F_7 = \frac{f_5}{100} \cdot \frac{f_1}{100}
-\end{equation}
-
-\noindent Po dosazení do následující rovnice:
-%% -------------------------------------------------- %%
-%% -------------------- Equation --------------------- %%
-%% -------------------------------------------------- %%
-\begin{equation}
-    \label{eqn:7_calculation_5_1}
-    F_{celk} = F_3 + F_6 + F_7
-\end{equation}
-
-\noindent Získáme následující rovnici:
-%% -------------------------------------------------- %%
-%% -------------------- Equation --------------------- %%
-%% -------------------------------------------------- %%
-\begin{equation}
-    \label{eqn:8_calculation_5_1}
-    F_{celk} = (2 - \frac{f_4}{100}) + (2 - (\frac{f_4}{100} \cdot \frac{f_2}{100})) + (\frac{f_5}{100} \cdot \frac{f_1}{100})
-\end{equation}
-
-\noindent Po dosazení a zkrácení dostávám následující rovnici, se kterou počítám ve webové aplikaci.
+\noindent Pro \textbf{systém 5:1} uvažuji následující vzorce:
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
@@ -122,66 +69,78 @@ Uvažuji rozložení sil (viz~\autoref{Obr:5:1_forces_distribution}). Od pramene
     F = \frac{m}{F_{celk}}
 \end{equation}
 
+\noindent Získáme následující rovnici, se kterou počítám ve webové aplikaci.
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:10_calculation_5_1}
-    F = \frac{m}{4 + \frac{f_1}{100} - \frac{f_4}{100} + (\frac{f_2}{100} \cdot \frac{f_3}{100}) \cdot (\frac{f_4}{100} - 1 - \frac{f_1}{100} + \frac{f_1}{100} \cdot \frac{f_4}{100})}
+    F = \frac{m}{1 + \frac{f_4}{100} \cdot (1 + \frac{f_3}{100} \cdot (1 + \frac{f_2}{100} \cdot (1 + \frac{f_1}{100})))}
 \end{equation}
 \subsection{Kladkostroj 7:1}
-Uvažuji rozložení sil (viz~\autoref{Obr:7:1_forces_distribution}). Od pramene, kterým se vytahuje zachraňovaný se jednotlivé části lana mezi kladkami rozdělí na ${F_1}$ - ${F_8}$. Kladky označuji ${f_1}$ - ${f_3}$ a začínají s číslováním od zachraňovaného. Pro \textbf{systém 7:1} uvažuji následující vzorce:
-
+Uvažuji rozložení sil (viz~\autoref{Obr:pulley_system_7_1}). Od pramene, kterým se vytahuje zachraňovaný se jednotlivé části lana mezi kladkami rozdělí na ${F_1}$ - ${F_5}$. Kladky označuji ${f_1}$ - ${f_3}$ a začínají s číslováním od zachraňovaného.
+%% -------------------------------------------------- %%
+%% -------------------- Picture --------------------- %%
+%% -------------------------------------------------- %%
+\begin{figure}[!hbt]
+    \centering
+    \includegraphics[width=10.0cm]{Figures/7_1/3_haul_syste_7_1_changed.png}
+    \caption[Schéma kladkostroje 7:1]{Schéma kladkostroje 7:1 (schéma převzato ze zdroje \cite{Petzl_2022})}
+    \label{Obr:pulley_system_7_1}
+\end{figure} 
+%% -------------------------------------------------- %%
+\newpage
+\noindent Pro \textbf{systém 7:1} uvažuji následující vzorce:
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:1_calculation_7_1}
-    F_2 = 2 - \frac{f_3}{100}
+    F_1 = 1
 \end{equation}
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:2_calculation_7_1}
-    F_3 = 4 - (\frac{f_3}{100}^2 + \frac{f_2}{100})
+    F_2 = \frac{f_3}{100} \cdot F_1
 \end{equation}
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:3_calculation_7_1}
-    F_4 = F_3 - F_2
+    F_3 = F_1 + F_2
 \end{equation}
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:4_calculation_7_1}
-    F_5 = \frac{f_3}{100}
+    F_4 = \frac{f_2}{100} \cdot F_3
 \end{equation}
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:5_calculation_7_1}
-    F_6 = F_4 + F_5
+    F_5 = \frac{f_1}{100} \cdot (F_2 + F_4)
 \end{equation}
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:6_calculation_7_1}
-    F_7 = F_6 \cdot \frac{f_1}{100}
+    E = F_3 + F_4 + F_5
 \end{equation}
 
-\noindent Po dosazení do následující rovnice:
+\noindent Po dosazení do rovnice:
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:7_calculation_7_1}
-    F_{celk} = F_3 + F_7
+    F_{celk} = (F_1 + F_2) + (\frac{f_2}{100} \cdot F_3) + (\frac{f_1}{100} \cdot (F_2 + F_4))
 \end{equation}
 
 \noindent Získáme následující rovnici:
@@ -190,10 +149,10 @@ Uvažuji rozložení sil (viz~\autoref{Obr:7:1_forces_distribution}). Od pramene
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:8_calculation_7_1}
-    F_{celk} = (4 - (\frac{f_3}{100}^2 + \frac{f_2}{100})) + (F_6 \cdot \frac{f_1}{100})
+    F_{celk} = (1 + \frac{f_3}{100} \cdot 1) + (\frac{f_2}{100} \cdot (1 + (\frac{f_3}{100} \cdot 1))) + (\frac{f_1}{100} \cdot ((\frac{f_3}{100} \cdot 1) + (\frac{f_2}{100} \cdot (1 + (\frac{f_3}{100} \cdot 1)))))
 \end{equation}
 
-\noindent Po dosazení a zkrácení dostávám následující rovnici, se kterou počítám ve webové aplikaci.
+\noindent Dostávám následující rovnici, se kterou počítám ve webové aplikaci.
 %% -------------------------------------------------- %%
 %% -------------------- Equation --------------------- %%
 %% -------------------------------------------------- %%
@@ -207,13 +166,13 @@ Uvažuji rozložení sil (viz~\autoref{Obr:7:1_forces_distribution}). Od pramene
 %% -------------------------------------------------- %%
 \begin{equation}
     \label{eqn:10_calculation_7_1}
-    F = \frac{m}{4 - \frac{f_2}{100} - \frac{f_3}{100}^{2} + 3 \cdot \frac{f_1}{100} - \frac{f_1}{100} \cdot \frac{f_3}{100}^{2} - \frac{f_2}{100} \cdot \frac{f_1}{100}}
+    F = \frac{m}{(1 + \frac{f_3}{100} \cdot 1) + (\frac{f_2}{100} \cdot (1 + (\frac{f_3}{100} \cdot 1))) + (\frac{f_1}{100} \cdot ((\frac{f_3}{100} \cdot 1) + (\frac{f_2}{100} \cdot (1 + (\frac{f_3}{100} \cdot 1)))))}
 \end{equation}
 
 \begin{tabular}{l l c p{9.75cm}}
     kde: \hspace{0.25cm} & $F$ & -- & vytahovaná hmotnost zachraňovaného lezce [kg]\\
     \hspace{0.25cm} & $m$ & -- & hmotnost vytahovaného lezce [kg]\\
-    \hspace{0.25cm} & $F_1$ - $F_8$ & -- & mezivýpočet účinnosti systému [\%]\\
+    \hspace{0.25cm} & $F_1$ - $F_5$ & -- & mezivýpočet účinnosti systému [\%]\\
     \hspace{0.25cm} & $f_1$ - $f_4$ & -- & účinnost kladkostroje [\%]\\
 \end{tabular}
 \\
