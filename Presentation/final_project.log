@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.10)  22 JAN 2023 21:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.10)  22 JAN 2023 21:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1203,11 +1203,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (./Chapters/chapter_web_application.tex
 Chapter 3.
-<Figures/WebApplication/1_Web_application.png, id=853, 307.64937pt x 478.28688pt>
+<Figures/WebApplication/1_Web_application.png, id=853, 318.18875pt x 522.95375pt>
 File: Figures/WebApplication/1_Web_application.png Graphic file (type png)
 <use Figures/WebApplication/1_Web_application.png>
 Package pdftex.def Info: Figures/WebApplication/1_Web_application.png  used on input line 21.
-(pdftex.def)             Requested size: 284.52756pt x 442.37195pt.
+(pdftex.def)             Requested size: 284.52756pt x 467.62975pt.
 <Figures/WebApplication/2_Web_application.png, id=854, 164.615pt x 125.46875pt>
 File: Figures/WebApplication/2_Web_application.png Graphic file (type png)
 <use Figures/WebApplication/2_Web_application.png>
@@ -1228,16 +1228,16 @@ File: Figures/WebApplication/5_Web_application.png Graphic file (type png)
 <use Figures/WebApplication/5_Web_application.png>
 Package pdftex.def Info: Figures/WebApplication/5_Web_application.png  used on input line 65.
 (pdftex.def)             Requested size: 284.52756pt x 25.82254pt.
-<Figures/WebApplication/6_Web_application.png, id=858, 337.26pt x 480.79625pt>
+<Figures/WebApplication/6_Web_application.png, id=858, 220.825pt x 236.885pt>
 File: Figures/WebApplication/6_Web_application.png Graphic file (type png)
 <use Figures/WebApplication/6_Web_application.png>
 Package pdftex.def Info: Figures/WebApplication/6_Web_application.png  used on input line 76.
-(pdftex.def)             Requested size: 227.62204pt x 324.50145pt.
+(pdftex.def)             Requested size: 227.62204pt x 244.18945pt.
 ) [22
 
 
 
-] [23 <./Figures/WebApplication/1_Web_application.png> <./Figures/WebApplication/2_Web_application.png> <./Figures/WebApplication/3_Web_application.png>] [24 <./Figures/WebApplication/4_Web_application.png> <./Figures/WebApplication/5_Web_application.png> <./Figures/WebApplication/6_Web_application.png>]
+] [23 <./Figures/WebApplication/1_Web_application.png> <./Figures/WebApplication/2_Web_application.png>] [24 <./Figures/WebApplication/3_Web_application.png> <./Figures/WebApplication/4_Web_application.png> <./Figures/WebApplication/5_Web_application.png> <./Figures/WebApplication/6_Web_application.png>]
 \openout2 = `Chapters/chapter_effort_calculation.aux'.
 
  (./Chapters/chapter_effort_calculation.tex
@@ -1405,7 +1405,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  75i,12n,77p,1345b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm3583.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on final_project.pdf (33 pages, 2504203 bytes).
+Output written on final_project.pdf (33 pages, 2492986 bytes).
 PDF statistics:
  1083 PDF objects out of 1200 (max. 8388607)
  751 compressed objects within 8 object streams
