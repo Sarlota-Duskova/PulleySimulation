@@ -101,7 +101,7 @@ input {
   border: solid 1px white;
   border-radius: 8px;
   height: 8px;
-  width: 90%;
+  width: 80%;
   outline: none;
   transition: background 450ms ease-in;
   -webkit-appearance: none;
@@ -170,123 +170,96 @@ footer {
 /*---- Weight and effort Force position-----*/
 #effortForce1 {
   position: absolute;
-  top: 89px;
-  left: 210px;
+  top: 131px;
+  left: 232px;
   right: 0px;
   bottom: 0px;
 }
 
 #weight1 {
   position: absolute;
-  top: 409px;
-  left: 175px;
+  top: 428px;
+  left: 128px;
+  right: 0px;
+  bottom: 0px;
+}
+
+#force1 {
+  position: absolute;
+  top: 100px;
+  left: -100px;
+  right: 0px;
+  bottom: 0px;
+}
+
+#force2 {
+  position: absolute;
+  top: 130px;
+  left: -100px;
+  right: 0px;
+  bottom: 0px;
+}
+
+#force3 {
+  position: absolute;
+  top: 160px;
+  left: -100px;
+  right: 0px;
+  bottom: 0px;
+}
+
+#force4 {
+  position: absolute;
+  top: 190px;
+  left: -100px;
+  right: 0px;
+  bottom: 0px;
+}
+
+#force5 {
+  position: absolute;
+  top: 220px;
+  left: -100px;
+  right: 0px;
+  bottom: 0px;
+}
+
+#force6 {
+  position: absolute;
+  top: 250px;
+  left: -100px;
   right: 0px;
   bottom: 0px;
 }
 
 #effortForce2 {
   position: absolute;
-  top: 135px;
-  left: 210px;
+  top: 211px;
+  left: 245px;
   right: 0px;
   bottom: 0px;
 }
 
 #weight2 {
   position: absolute;
-  top: 345px;
-  left: 180px;
+  top: 427px;
+  left: 128px;
   right: 0px;
   bottom: 0px;
 }
 
 #effortForce3 {
   position: absolute;
-  top: 50px;
-  left: 210px;
+  top: 79px;
+  left: 250px;
   right: 0px;
   bottom: 0px;
 }
 
 #weight3 {
   position: absolute;
-  top: 345px;
-  left: 150px;
-  right: 0px;
-  bottom: 0px;
-}
-
-/*--------- Pulley position 3:1 ---------*/
-#firstPulley3_1 {
-  position: absolute;
-  top: 70px;
-  left: 83px;
-  right: 0px;
-  bottom: 0px;
-}
-
-#secondPulley3_1 {
-  position: absolute;
-  top: 237px;
-  left: 93px;
-  right: 0px;
-  bottom: 0px;
-}
-
-/*--------- Pulley position 5:1 ----------*/
-#firstPulley5_1 {
-  position: absolute;
-  top: 67px;
-  left: 73px;
-  right: 0px;
-  bottom: 0px;
-}
-
-#secondPulley5_1 {
-  position: absolute;
-  top: 238px;
-  left: 81px;
-  right: 0px;
-  bottom: 0px;
-}
-
-#thirdPulley5_1 {
-  position: absolute;
-  top: 67px;
-  left: 113px;
-  right: 0px;
-  bottom: 0px;
-}
-
-#fourthPulley5_1 {
-  position: absolute;
-  top: 246px;
-  left: 116px;
-  right: 0px;
-  bottom: 0px;
-}
-
-/*-------- Pulley position 7:1 ---------*/
-#firstPulley7_1 {
-  position: absolute;
-  top: 56px;
-  left: 69px;
-  right: 0px;
-  bottom: 0px;
-}
-
-#secondPulley7_1 {
-  position: absolute;
-  top: 202px;
-  left: 88px;
-  right: 0px;
-  bottom: 0px;
-}
-
-#thirdPulley7_1 {
-  position: absolute;
-  top: 138px;
-  left: 116px;
+  top: 415px;
+  left: 110px;
   right: 0px;
   bottom: 0px;
 }

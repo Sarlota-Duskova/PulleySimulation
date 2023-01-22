@@ -8,6 +8,23 @@ var checkBox1 = document.getElementById("checkb-3"); // Checkbox 3:1
 var checkBox2 = document.getElementById("checkb-5"); // Checkbox 5:1
 var checkBox3 = document.getElementById("checkb-7"); // Checkbox 7:1
 
+//Get forces
+var outputForce31 = document.getElementById('3_textForce1');
+var outputForce32 = document.getElementById('3_textForce2');
+var outputForce33 = document.getElementById('3_textForce3');
+
+var outputForce51 = document.getElementById('5_textForce1');
+var outputForce52 = document.getElementById('5_textForce2');
+var outputForce53 = document.getElementById('5_textForce3');
+var outputForce54 = document.getElementById('5_textForce4');
+var outputForce55 = document.getElementById('5_textForce5');
+
+var outputForce71 = document.getElementById('7_textForce1');
+var outputForce72 = document.getElementById('7_textForce2');
+var outputForce73 = document.getElementById('7_textForce3');
+var outputForce74 = document.getElementById('7_textForce4');
+var outputForce75 = document.getElementById('7_textForce5');
+
 //Get the span elements
 var outputSpan1 = document.getElementById('textInputForce1'); // Force of the required pulling force for 3:1 pulley system
 var outputSpan2 = document.getElementById('textInputForce2'); // Force of the required pulling force for 5:1 pulley system
@@ -175,11 +192,21 @@ function recalculate() {
 
     outputSpan1.textContent = (rangeSlider.value / f).toFixed(2);
     outputSpanDist.textContent = requiredPullOutLength.value*3;
+    // Calculation of individual forces
+    outputForce31.textContent = (rangeSlider.value / (1+f2*(1+f1))).toFixed(2);
+    outputForce32.textContent = (rangeSlider.value / (1+f1)).toFixed(2);
+    outputForce33.textContent = (rangeSlider.value / (1)).toFixed(2);
   } else if (checkBox2.checked) {
     const f = 1+f4*(1+f3*(1+f2*(1+f1)));
 
     outputSpan2.textContent = (rangeSlider.value / f).toFixed(2);
     outputSpanDist.textContent = requiredPullOutLength.value*5;
+    // Calculation of individual forces
+    outputForce51.textContent = (rangeSlider.value / (1+f4*(1+f3*(1+f2*(1+f1))))).toFixed(2);
+    outputForce52.textContent = (rangeSlider.value / (f4*(1+f3*(1+f2*(1+f1))))).toFixed(2);
+    outputForce53.textContent = (rangeSlider.value / (1+f3*(1+f2*(1+f1)))).toFixed(2);
+    outputForce54.textContent = (rangeSlider.value / (1+f2*(1+f1))).toFixed(2);
+    outputForce55.textContent = (rangeSlider.value / (1+f1)).toFixed(2);
   } else if (checkBox3.checked) {
     const a = 1;
     const b = f3 * a;
@@ -190,6 +217,12 @@ function recalculate() {
 
     outputSpan3.textContent = (rangeSlider.value / f).toFixed(2);
     outputSpanDist.textContent = requiredPullOutLength.value*7;
+    // Calculation of individual forces
+    outputForce71.textContent = (rangeSlider.value / f).toFixed(2);
+    outputForce72.textContent = (rangeSlider.value / e).toFixed(2);
+    outputForce73.textContent = (rangeSlider.value / d).toFixed(2);
+    outputForce74.textContent = (rangeSlider.value / c).toFixed(2);
+    outputForce75.textContent = (rangeSlider.value / b).toFixed(2);
   }
 
   output1.value = rangeSlider.value; // Change weight of climber in 3:1 pulley system
